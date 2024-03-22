@@ -11,15 +11,16 @@ public class Aluguel {
         this.diasAlugado = diasAlugado;
     }
 
-    public String getValorTotal(List<Aluguel> dvdsAlugados){
+    public double getValorTotal(List<Aluguel> dvdsAlugados){
         double valorTotal = 0.0;
-        String resultado = "Registro de Alugueis:\n";
+        //String resultado = "Registro de Alugueis:\n";
+
         for (Aluguel aluguel : dvdsAlugados) {
             valorTotal +=  dvd.getClassificacao().calcularValor(diasAlugado);
-            resultado += "Filme: " + aluguel.dvd.getTítulo() + " | Dias: " + aluguel.diasAlugado + " |Total: R$" + dvd.getClassificacao().calcularValor(diasAlugado) + "\n";
+            //resultado += "Filme: " + aluguel.dvd.getTítulo() + " | Dias: " + aluguel.diasAlugado + " |Total: R$" + dvd.getClassificacao().calcularValor(diasAlugado) + "\n";
         }
-        resultado += "Valor total: R$" + valorTotal;
-        return resultado;
+        //resultado += "Valor total: R$" + valorTotal;
+        return valorTotal;
     }
 
     public int pontosDeAlugadorFrequente(){
