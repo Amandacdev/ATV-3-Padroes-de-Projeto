@@ -1,23 +1,6 @@
 package locadora;
 
-public class DvdInfantil implements Dvd {
-
-    public Classificacao tipo;
-    public String título;
-    
-    public DvdInfantil(String título) {
-        this.título = título;
-        this.tipo = Classificacao.INFANTIL;
-    }
-  
-    public String getTítulo() {
-        return título;
-    } 
-
-    public Classificacao getTipo(){
-        return tipo;
-    }
-    
+public class DvdInfantil implements Classificacao {
     @Override
     public double calcularValor(int diasAlugados){
         //Regra de negócio: R$1.50 por 3 dias, dia adicioal acrescenta R$1.50
@@ -30,10 +13,8 @@ public class DvdInfantil implements Dvd {
     }
 
     public int getPontosDeAlugadorFrequente(int diasAlugados){
+
         return 0;
     }
 
-    public String toString(){
-        return "O filme " + título + " é " + tipo + ".";
-    }
 }

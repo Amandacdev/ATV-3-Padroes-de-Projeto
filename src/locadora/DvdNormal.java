@@ -1,26 +1,6 @@
 package locadora;
 
-public class DvdNormal implements Dvd{
-    public Classificacao tipo;
-    public String título;
-    
-    public DvdNormal(String título) {
-        this.título = título;
-        this.tipo = Classificacao.NORMAL;
-    }
-  
-    public String getTítulo() {
-        return título;
-    } 
-
-    public Classificacao getTipo(){
-        return tipo;
-    }
-    
-    public String toString(){
-        return "O filme " + título + " é " + tipo + ".";
-    }
-    
+public class DvdNormal implements Classificacao{
     @Override
     public double calcularValor(int diasAlugados){
         //Regra de negócio: R$ 2.00 por 2 dias. O dia adicional acrescenta R$ 1.50.
@@ -35,4 +15,5 @@ public class DvdNormal implements Dvd{
     public int getPontosDeAlugadorFrequente(int diasAlugados){
         return 0;
     }
+
 }

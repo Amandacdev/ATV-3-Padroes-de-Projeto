@@ -1,11 +1,18 @@
 package locadora;
 
-public interface Dvd {
- 
-    public String getTítulo();
-    public Classificacao getTipo();
-    public String toString();
-    public double calcularValor(int diasAlugados);
+public class Dvd{
+    private String título;
+    private Classificacao classificacao;
 
-    public int getPontosDeAlugadorFrequente(int dias);
+    public Dvd(String título, Classificacao classificacao){
+        this.título = título;
+        this.classificacao = classificacao;
+    }
+
+    public String getTítulo(){
+        return título;
+    }
+    public Classificacao getClassificacao(){
+        return classificacao;
+    }
 }

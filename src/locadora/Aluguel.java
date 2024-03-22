@@ -15,15 +15,15 @@ public class Aluguel {
         double valorTotal = 0.0;
         String resultado = "Registro de Alugueis:\n";
         for (Aluguel aluguel : dvdsAlugados) {
-            valorTotal += dvd.calcularValor(diasAlugado);
-            resultado += "Filme: " + aluguel.dvd.getTítulo() + " | Dias: " + aluguel.diasAlugado + " |Total: R$" + aluguel.dvd.calcularValor(diasAlugado) + "\n";
+            valorTotal +=  dvd.getClassificacao().calcularValor(diasAlugado);
+            resultado += "Filme: " + aluguel.dvd.getTítulo() + " | Dias: " + aluguel.diasAlugado + " |Total: R$" + dvd.getClassificacao().calcularValor(diasAlugado) + "\n";
         }
         resultado += "Valor total: R$" + valorTotal;
         return resultado;
     }
 
     public int pontosDeAlugadorFrequente(){
-        return dvd.getPontosDeAlugadorFrequente(diasAlugado);
+        return dvd.getClassificacao().getPontosDeAlugadorFrequente(diasAlugado);
     }
 
     public int getPontosTotaisDeAlugadorFrequente(List<Aluguel> dvdsAlugados){

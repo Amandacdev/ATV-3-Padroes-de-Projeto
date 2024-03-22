@@ -1,7 +1,9 @@
 package locadora;
 
-public enum Classificacao {
-    NORMAL,
-    LANCAMENTO,
-    INFANTIL;
+public interface Classificacao {
+    public String toString();
+    public double calcularValor(int diasAlugados);
+
+    public int getPontosDeAlugadorFrequente(int dias);
+
 }
