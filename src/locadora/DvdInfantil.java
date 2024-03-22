@@ -27,7 +27,11 @@ public class DvdInfantil implements Dvd {
         }
         else{
             return valorTotal;} 
-    };
+    }
+
+    public int getPontosDeAlugadorFrequente(int diasAlugados){
+        return 0;
+    }
 
     public String toString(){
         return "O filme " + título + " é " + tipo + ".";

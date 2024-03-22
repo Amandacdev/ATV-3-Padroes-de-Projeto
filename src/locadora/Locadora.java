@@ -13,5 +13,6 @@ public class Locadora {
         cli1.adicionarAluguel(new Aluguel(dvd3, 1));
         cli1.adicionarAluguel(new Aluguel(dvd4, 1));
         System.out.println(cli1.extrato());
+        System.out.println(cli1.pontosTotais());
     }
 }

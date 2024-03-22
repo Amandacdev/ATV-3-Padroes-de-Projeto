@@ -30,5 +30,9 @@ public class DvdNormal implements Dvd{
         }
         else{
             return valorTotal;}
-    };    
+    }
+
+    public int getPontosDeAlugadorFrequente(int diasAlugados){
+        return 0;
+    }
 }

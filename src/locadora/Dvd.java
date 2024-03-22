@@ -6,4 +6,6 @@ public interface Dvd {
     public Classificacao getTipo();
     public String toString();
     public double calcularValor(int diasAlugados);
+
+    public int getPontosDeAlugadorFrequente(int dias);
 }

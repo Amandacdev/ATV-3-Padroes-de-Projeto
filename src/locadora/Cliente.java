@@ -1,12 +1,14 @@
 package locadora;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class Cliente {
-    public String nome;
-    public List<Aluguel> dvdsAlugados = new ArrayList<Aluguel>();
+    private String nome;
+    private List<Aluguel> dvdsAlugados = new ArrayList<Aluguel>();
 
+    public String getNome() {
+        return nome;
+    }
     public Cliente(String nome) {
         this.nome = nome;
     }
@@ -15,18 +17,17 @@ public class Cliente {
         dvdsAlugados.add(aluguel);
     }
 
-    public String extrato(){
-        double valorTotal = 0.0;
-        int pontosDeAlugadorFrequente = 0;
-        
-        String resultado = "Registro de Alugueis de " + nome + ":\n";
-
+    public String extrato() {
         for (Aluguel aluguel : dvdsAlugados) {
-            valorTotal += aluguel.valorAluguel();
-            resultado += "Filme: " + aluguel.dvd.getTítulo() + " | Dias: " + aluguel.diasAlugado + " |Total: R$" +aluguel.valorAluguel() + "\n";
-            pontosDeAlugadorFrequente += aluguel.pontosDeAlugadorFrequente();
+            return aluguel.getValorTotal(dvdsAlugados);
         }
-        resultado += "Valor total: R$" + valorTotal +"\nVocê acumulou " + pontosDeAlugadorFrequente +" pontos de alugador frequente.";
-        return resultado;
+        return "Sem alugueis registrados";
+    }
+
+    public String pontosTotais(){
+        for (Aluguel aluguel : dvdsAlugados) {
+            return "O cliente " + getNome() + " possui " + aluguel.getPontosTotaisDeAlugadorFrequente(dvdsAlugados) + " pontos.";
+        }
+        return "Registro não localizado";
     }
 }
